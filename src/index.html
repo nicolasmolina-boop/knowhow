@@ -3,102 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Know How S.A. de C.V. — Software hospitalario, agentes IA de ventas y consultoría organizacional. Honduras.">
-    <title>Know How S.A. de C.V.</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #fafafa;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #0a2540;
-        }
-        .tagline {
-            font-size: 1.25rem;
-            color: #525f7f;
-            margin-bottom: 48px;
-        }
-        .status {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #fff3cd;
-            color: #856404;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-        }
-        .productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin-top: 48px;
-        }
-        .producto {
-            padding: 24px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        .producto h3 {
-            font-size: 1rem;
-            color: #0a2540;
-            margin-bottom: 8px;
-        }
-        .producto p {
-            font-size: 0.9rem;
-            color: #525f7f;
-        }
-        footer {
-            margin-top: 80px;
-            padding-top: 32px;
-            border-top: 1px solid #e6ebf1;
-            font-size: 0.85rem;
-            color: #8898aa;
-        }
-    </style>
+    <title>Know How S.A. — Software hospitalario, agentes IA y consultoría organizacional | Honduras</title>
+    <meta name="description" content="15 años desarrollando software hospitalario en Honduras. Hospinet, agentes IA de ventas y consultoría organizacional para empresas e iglesias.">
+    <meta name="keywords" content="software hospitalario Honduras, Hospinet, agentes IA ventas, consultoría organizacional, Know How">
+    <meta name="author" content="Know How, S.A. de C.V.">
+    <meta property="og:title" content="Know How S.A. — Software que sostiene operaciones serias">
+    <meta property="og:description" content="15 años desarrollando software hospitalario en Honduras. Hospinet, agentes IA de ventas y consultoría organizacional.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="status">🚧 Sitio en construcción</div>
-        <h1>Know How</h1>
-        <p class="tagline">Software hospitalario, agentes IA y consultoría organizacional</p>
 
+<header class="site-header">
+    <div class="container">
+        <a href="/" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Software que sostiene operaciones serias</h1>
+        <p class="tagline">15 años desarrollando sistemas hospitalarios. Hoy también construimos agentes IA de ventas y estructuramos empresas en Honduras y la región.</p>
+        <div class="hero-cta">
+            <a href="hospinet.html" class="btn btn-primary">Ver Hospinet</a>
+            <a href="contacto.html" class="btn btn-secondary">Contactanos</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>Cuatro líneas, una filosofía</h2>
+            <p>Tecnología que se entiende, se mantiene y produce resultados medibles.</p>
+        </div>
         <div class="productos">
             <div class="producto">
+                <div class="icono">🏥</div>
                 <h3>Hospinet</h3>
-                <p>Software hospitalario con 15 años de desarrollo</p>
+                <p>Sistema de gestión hospitalaria con expediente clínico, facturación, laboratorio, farmacia, RRHH e inventarios. En producción real desde hace 15 años.</p>
+                <a href="hospinet.html">Conocer más →</a>
             </div>
             <div class="producto">
+                <div class="icono">🤖</div>
                 <h3>Agentes IA de Ventas</h3>
-                <p>Bots que atienden y cierran ventas 24/7</p>
+                <p>Bots inteligentes que atienden, califican y cierran ventas en WhatsApp, Instagram y Facebook. Integrados con tu CRM y disponibles 24/7.</p>
+                <a href="agentes-ia.html">Conocer más →</a>
             </div>
             <div class="producto">
+                <div class="icono">🏢</div>
                 <h3>Estructura de Empresas</h3>
-                <p>Software + consultoría organizacional</p>
+                <p>Software y consultoría para ordenar procesos operativos, RRHH, inventarios y unidades de negocio. Para empresas que necesitan crecer sin caos.</p>
+                <a href="empresas.html">Conocer más →</a>
             </div>
             <div class="producto">
+                <div class="icono">⛪</div>
                 <h3>Estructura de Iglesias</h3>
-                <p>Gestión de ministerios y membresía</p>
+                <p>Plataforma para organizar membresía, ministerios, liderazgo, eventos y administración eclesiástica. Diseñada con pastores, no contra ellos.</p>
+                <a href="iglesias.html">Conocer más →</a>
             </div>
         </div>
-
-        <footer>
-            <p>Know How, S.A. de C.V.</p>
-            <p>Tegucigalpa, Honduras</p>
-            <p>© 2026</p>
-        </footer>
     </div>
+</section>
+
+<section class="proof">
+    <div class="container">
+        <div class="section-header">
+            <h2>Lo que respalda nuestro trabajo</h2>
+            <p>No hablamos de promesas. Hablamos de operaciones que llevan años funcionando.</p>
+        </div>
+        <div class="numeros">
+            <div class="numero">
+                <div class="valor">15</div>
+                <div class="label">Años desarrollando Hospinet</div>
+            </div>
+            <div class="numero">
+                <div class="valor">2</div>
+                <div class="label">Hospitales en producción real</div>
+            </div>
+            <div class="numero">
+                <div class="valor">24/7</div>
+                <div class="label">Atención de agentes IA</div>
+            </div>
+            <div class="numero">
+                <div class="valor">2016</div>
+                <div class="label">Año de constitución legal</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="alt">
+    <div class="container">
+        <div class="section-header">
+            <h2>¿Listo para hablar?</h2>
+            <p>Contanos qué necesitás. Si podemos ayudarte, te lo decimos. Si no, también.</p>
+        </div>
+        <div style="text-align: center;">
+            <a href="contacto.html" class="btn btn-primary">Escribinos</a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
