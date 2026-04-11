@@ -1,0 +1,31 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Credenciales (NUNCA subir)
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Node (por si se agrega después)
+node_modules/
+dist/
+build/
+
+# Temporales
+tmp/
+temp/
+*.tmp
