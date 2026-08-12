@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de fugas de una clínica | Know How, S.A. de C.V. — Honduras</title>
+    <meta name="description" content="Calcule cuánto pierde su clínica al año por citas no asistidas y facturación que no se registra. Usted pone los porcentajes, la herramienta hace la multiplicación.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+        <meta property="og:url" content="https://knowhowhn.net/calculadora-fugas-clinica">
+        <link rel="canonical" href="https://knowhowhn.net/calculadora-fugas-clinica">
+    <style>
+        /* ===== CALCULADORA DE FUGAS ===== */
+        .calc {
+            max-width: 720px;
+            margin: 32px auto 0;
+        }
+
+        .calc-campo {
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .calc-campo:last-child {
+            border-bottom: 0;
+        }
+
+        .calc-campo label {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+
+        .calc-campo .calc-ayuda {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--color-text-mute);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .calc-fila {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .calc-input {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            background: #fff;
+            padding: 10px 12px;
+            flex: 0 0 auto;
+            min-width: 150px;
+        }
+
+        .calc-input:focus-within {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+        }
+
+        .calc-input .calc-unidad {
+            font-weight: 700;
+            color: var(--color-text-mute);
+            font-size: 1rem;
+            flex: 0 0 auto;
+        }
+
+        .calc-input input[type="number"] {
+            width: 100%;
+            border: 0;
+            outline: none;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text);
+            background: transparent;
+            padding: 0;
+            -moz-appearance: textfield;
+        }
+
+        .calc-input input[type="number"]::-webkit-outer-spin-button,
+        .calc-input input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .calc-fila input[type="range"] {
+            flex: 1 1 220px;
+            min-width: 180px;
+            width: 100%;
+            height: 28px;
+            accent-color: var(--color-primary-light);
+            cursor: pointer;
+        }
+
+        .calc-fila input[type="range"]:focus-visible,
+        .calc-input input[type="number"]:focus-visible {
+            outline: 3px solid var(--color-accent-dark);
+            outline-offset: 2px;
+        }
+
+        .calc-supuesto {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--color-primary-light);
+            background: var(--color-bg-soft);
+            border: 1px solid var(--color-border);
+            border-radius: 999px;
+            padding: 3px 10px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .calc-resultado {
+            background: var(--color-primary);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 36px 24px;
+            margin: 40px auto 0;
+            max-width: 720px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .calc-resultado h3 {
+            color: #fff;
+            text-align: center;
+            font-size: 1.15rem;
+            margin: 0 0 28px;
+        }
+
+        .calc-resultado .numeros {
+            gap: 24px;
+        }
+
+        .calc-resultado .numero .valor {
+            font-size: 2rem;
+            word-break: break-word;
+        }
+
+        .calc-resultado .numero .sub {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            opacity: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .calc-total {
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .calc-total .calc-total-label {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        .calc-total .calc-total-valor {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--color-accent);
+            line-height: 1.05;
+            word-break: break-word;
+        }
+
+        .calc-total .calc-total-nota {
+            font-size: 0.88rem;
+            opacity: 0.75;
+            margin-top: 12px;
+        }
+
+        .calc-detalle {
+            max-width: 720px;
+            margin: 28px auto 0;
+            font-size: 0.95rem;
+            color: var(--color-text-soft);
+        }
+
+        .calc-detalle li {
+            margin-bottom: 10px;
+        }
+
+        .calc-aviso {
+            max-width: 720px;
+            margin: 32px auto 0;
+            background: var(--color-bg-soft);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-primary-light);
+            border-radius: var(--radius);
+            padding: 20px 22px;
+        }
+
+        .calc-aviso p {
+            margin: 0 0 10px;
+            font-size: 0.95rem;
+        }
+
+        .calc-aviso p:last-child {
+            margin-bottom: 0;
+        }
+
+        .calc-cierre {
+            max-width: 720px;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .calc-input { width: 100%; min-width: 0; }
+            .calc-fila input[type="range"] { flex: 1 1 100%; }
+            .calc-resultado { padding: 28px 18px; }
+            .calc-total .calc-total-valor { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">Inicio › Calculadora de fugas</div>
+        <h1>¿Cuánto se le fuga a su clínica al año?</h1>
+        <p class="lead">Dos fugas que todo administrador puede estimar, pero casi nadie suma: las citas que nadie ocupó y la facturación que nunca se registró.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+
+        <p>Mueva los controles con los datos de su clínica. El resultado se actualiza solo, no hay botón de calcular. Los porcentajes los estima usted; esta herramienta solo hace la multiplicación.</p>
+
+        <form class="calc" id="calc" novalidate>
+
+            <div class="calc-campo">
+                <label for="consultas">Consultas o citas al mes</label>
+                <span class="calc-ayuda" id="ayuda-consultas">Cuántas citas programa su clínica en un mes normal, sumando todos los consultorios.</span>
+                <div class="calc-fila">
+                    <div class="calc-input">
+                        <input type="number" id="consultas" inputmode="numeric" min="0" step="10" value="600"
+                               aria-describedby="ayuda-consultas">
+                        <span class="calc-unidad" aria-hidden="true">citas</span>
+                    </div>
+                    <input type="range" id="consultas-rango" min="0" max="5000" step="10" value="600"
+                           aria-label="Ajustar consultas o citas al mes">
+                </div>
+            </div>
+
+            <div class="calc-campo">
+                <label for="precio">Precio promedio de la consulta</label>
+                <span class="calc-ayuda" id="ayuda-precio">Lo que cobra en promedio por una consulta, en lempiras.</span>
+                <div class="calc-fila">
+                    <div class="calc-input">
+                        <span class="calc-unidad" aria-hidden="true">L</span>
+                        <input type="number" id="precio" inputmode="numeric" min="0" step="25" value="400"
+                               aria-describedby="ayuda-precio">
+                    </div>
+                    <input type="range" id="precio-rango" min="0" max="3000" step="25" value="400"
+                           aria-label="Ajustar precio promedio de la consulta">
+                </div>
+            </div>
+
+            <div class="calc-campo">
+                <label for="pct-noshow">Porcentaje estimado de inasistencia <span class="calc-supuesto">supuesto suyo</span></label>
+                <span class="calc-ayuda" id="ayuda-noshow">De cada 100 citas programadas, cuántas no se presentan y el espacio queda vacío. Ponga el número que usted ve en su clínica; el valor inicial es solo un punto de partida conservador.</span>
+                <div class="calc-fila">
+                    <div class="calc-input">
+                        <input type="number" id="pct-noshow" inputmode="decimal" min="0" max="100" step="0.5" value="10"
+                               aria-describedby="ayuda-noshow">
+                        <span class="calc-unidad" aria-hidden="true">%</span>
+                    </div>
+                    <input type="range" id="pct-noshow-rango" min="0" max="50" step="0.5" value="10"
+                           aria-label="Ajustar porcentaje estimado de inasistencia">
+                </div>
+            </div>
+
+            <div class="calc-campo">
+                <label for="ingreso">Ingreso mensual total facturado</label>
+                <span class="calc-ayuda" id="ayuda-ingreso">Todo lo que factura la clínica en un mes: consultas, laboratorio, imágenes, farmacia y procedimientos.</span>
+                <div class="calc-fila">
+                    <div class="calc-input">
+                        <span class="calc-unidad" aria-hidden="true">L</span>
+                        <input type="number" id="ingreso" inputmode="numeric" min="0" step="10000" value="450000"
+                               aria-describedby="ayuda-ingreso">
+                    </div>
+                    <input type="range" id="ingreso-rango" min="0" max="5000000" step="10000" value="450000"
+                           aria-label="Ajustar ingreso mensual total facturado">
+                </div>
+            </div>
+
+            <div class="calc-campo">
+                <label for="pct-fuga">Porcentaje de facturación que se pierde o no se registra <span class="calc-supuesto">supuesto suyo</span></label>
+                <span class="calc-ayuda" id="ayuda-fuga">Exámenes, medicamentos o procedimientos que se entregaron y nunca se cobraron, o se cobraron mal: cajas desconectadas, boletas en papel, descuentos que nadie autorizó. Estime el porcentaje usted mismo.</span>
+                <div class="calc-fila">
+                    <div class="calc-input">
+                        <input type="number" id="pct-fuga" inputmode="decimal" min="0" max="100" step="0.5" value="3"
+                               aria-describedby="ayuda-fuga">
+                        <span class="calc-unidad" aria-hidden="true">%</span>
+                    </div>
+                    <input type="range" id="pct-fuga-rango" min="0" max="25" step="0.5" value="3"
+                           aria-label="Ajustar porcentaje de facturación que se pierde o no se registra">
+                </div>
+            </div>
+
+        </form>
+
+        <div class="calc-resultado" role="status" aria-live="polite">
+            <h3>Con los números que usted puso</h3>
+
+            <div class="numeros">
+                <div class="numero">
+                    <div class="sub">Citas no asistidas</div>
+                    <div class="valor" id="out-noshow-anual">L 288,000</div>
+                    <div class="label">al año — <span id="out-noshow-mes">L 24,000</span> al mes</div>
+                </div>
+                <div class="numero">
+                    <div class="sub">Facturación no registrada</div>
+                    <div class="valor" id="out-fuga-anual">L 162,000</div>
+                    <div class="label">al año — <span id="out-fuga-mes">L 13,500</span> al mes</div>
+                </div>
+            </div>
+
+            <div class="calc-total">
+                <div class="calc-total-label">Total que se fuga en un año</div>
+                <div class="calc-total-valor" id="out-total-anual">L 450,000</div>
+                <div class="calc-total-nota" id="out-total-nota">Equivale a L 37,500 cada mes.</div>
+            </div>
+        </div>
+
+        <ul class="calc-detalle" id="calc-detalle">
+            <li id="det-citas">Son <strong>60</strong> citas al mes que nadie ocupó, es decir <strong>720</strong> al año.</li>
+            <li>Las dos fugas no se traslapan: la primera es plata que nunca entró a facturarse, la segunda es plata de servicios que sí se dieron y no se cobraron bien.</li>
+        </ul>
+
+        <div class="calc-aviso">
+            <p><strong>Cómo leer este número.</strong> Los porcentajes los estima usted; esta herramienta solo hace la multiplicación. No usamos ningún promedio de industria, ningún estudio y ningún dato ajeno a su clínica.</p>
+            <p>El cálculo de inasistencia asume que la cita perdida no se rellenó con otro paciente. Si en su clínica esos espacios sí se ocupan, baje el porcentaje hasta que refleje su realidad.</p>
+            <p>No prometemos que un sistema recupere una parte determinada de esta cifra. Lo único que afirmamos es que hoy, en la mayoría de clínicas, este número no se está midiendo.</p>
+        </div>
+
+        <div class="calc-cierre">
+            <h2>Si el número le pareció alto, vale la pena verlo con datos reales</h2>
+            <p>Podemos revisar juntos de dónde salen esas cifras en su operación: cuántas citas se pierden de verdad, qué se factura y qué no. Sin compromiso.</p>
+            <p><a href="contacto.html" class="btn btn-primary">Conversemos sobre su clínica</a></p>
+            <p style="margin-top: 24px; color: var(--color-text-mute); font-size: 0.9rem;">
+                También puede ver cómo trabaja <a href="hospinet.html">Hospinet</a>, el sistema hospitalario que desarrollamos.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<a href="contacto.html" class="wa-float" title="Contáctenos">💬</a>
+
+
+<script>
+(function () {
+  'use strict';
+
+  var form = document.getElementById('calc');
+  if (!form) return;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Pares campo numérico <-> deslizador
+  var pares = [
+    ['consultas', 'consultas-rango'],
+    ['precio', 'precio-rango'],
+    ['pct-noshow', 'pct-noshow-rango'],
+    ['ingreso', 'ingreso-rango'],
+    ['pct-fuga', 'pct-fuga-rango']
+  ];
+
+  // Lee un campo numérico. Vacío, negativo o basura = 0.
+  function leer(id) {
+    var n = parseFloat($(id).value);
+    if (!isFinite(n) || n < 0) return 0;
+    return n;
+  }
+
+  // Entero con separador de miles. Sin depender del locale del navegador.
+  function miles(n) {
+    if (!isFinite(n)) n = 0;
+    var s = Math.round(n).toString();
+    return s.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function lempiras(n) {
+    return 'L ' + miles(n);
+  }
+
+  function calcular() {
+    var consultas = leer('consultas');
+    var precio    = leer('precio');
+    var pctNoShow = Math.min(leer('pct-noshow'), 100);
+    var ingreso   = leer('ingreso');
+    var pctFuga   = Math.min(leer('pct-fuga'), 100);
+
+    // Fuga 1: citas que nadie ocupó
+    var citasPerdidasMes  = consultas * (pctNoShow / 100);
+    var noShowMes         = citasPerdidasMes * precio;
+    var noShowAnual       = noShowMes * 12;
+
+    // Fuga 2: facturación que no se registró
+    var fugaMes           = ingreso * (pctFuga / 100);
+    var fugaAnual         = fugaMes * 12;
+
+    var totalMes          = noShowMes + fugaMes;
+    var totalAnual        = noShowAnual + fugaAnual;
+
+    $('out-noshow-mes').textContent   = lempiras(noShowMes);
+    $('out-noshow-anual').textContent = lempiras(noShowAnual);
+    $('out-fuga-mes').textContent     = lempiras(fugaMes);
+    $('out-fuga-anual').textContent   = lempiras(fugaAnual);
+    $('out-total-anual').textContent  = lempiras(totalAnual);
+    $('out-total-nota').textContent   = 'Equivale a ' + lempiras(totalMes) + ' cada mes.';
+
+    $('det-citas').innerHTML =
+      'Son <strong>' + miles(citasPerdidasMes) + '</strong> citas al mes que nadie ocupó, es decir <strong>' +
+      miles(citasPerdidasMes * 12) + '</strong> al año.';
+  }
+
+  // Sincroniza deslizador y campo numérico en las dos direcciones.
+  pares.forEach(function (par) {
+    var campo = $(par[0]);
+    var rango = $(par[1]);
+    if (!campo || !rango) return;
+
+    rango.addEventListener('input', function () {
+      campo.value = rango.value;
+      calcular();
+    });
+
+    campo.addEventListener('input', function () {
+      var n = parseFloat(campo.value);
+      if (isFinite(n)) {
+        // El deslizador solo refleja lo que cabe en su rango;
+        // el cálculo siempre usa el valor escrito.
+        rango.value = Math.min(Math.max(n, parseFloat(rango.min)), parseFloat(rango.max));
+      }
+      calcular();
+    });
+  });
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+  calcular();
+})();
+</script>
+</body>
+</html>
