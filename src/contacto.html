@@ -59,7 +59,7 @@
         <h2>Escribinos directo</h2>
         <p>Llená el formulario y nos ponemos en contacto en menos de 24 horas hábiles.</p>
 
-        <form class="form" action="#" method="POST">
+        <form class="form" id="form-contacto" novalidate>
             <div class="form-group">
                 <label for="nombre">Nombre completo</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -93,8 +93,9 @@
             <button type="submit" class="btn btn-primary">Enviar mensaje</button>
         </form>
 
-        <p style="text-align: center; margin-top: 32px; color: var(--color-text-mute); font-size: 0.9rem;">
-            * El formulario aún no está conectado. Por ahora escribinos directo al correo o WhatsApp arriba.
+        <p id="form-nota" style="text-align: center; margin-top: 32px; color: var(--color-text-mute); font-size: 0.9rem;">
+            Al enviar se abre WhatsApp con tu mensaje ya escrito. Si preferís correo,
+            escribinos a <a href="mailto:info@knowhowhn.net">info@knowhowhn.net</a>.
         </p>
     </div>
 </section>
@@ -138,5 +139,45 @@
 
 <a href="contacto.html" class="wa-float" title="Contactanos">💬</a>
 
+
+<script>
+(function () {
+  var form = document.getElementById('form-contacto');
+  if (!form) return;
+  var WA = '50497655779';
+  var etiquetas = {
+    hospinet: 'Hospinet — software hospitalario',
+    'agentes-ia': 'Agentes IA de ventas',
+    empresas: 'Estructura de empresas',
+    iglesias: 'Estructura de iglesias',
+    otro: 'Otro'
+  };
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(form);
+    var v = function (k) { return (d.get(k) || '').toString().trim(); };
+    if (!v('nombre') || !v('email') || !v('mensaje')) {
+      document.getElementById('form-nota').textContent =
+        'Falta tu nombre, tu correo o el mensaje.';
+      return;
+    }
+    var lineas = [
+      'Hola Know How, les escribo desde el sitio.',
+      '',
+      'Nombre: ' + v('nombre'),
+      v('empresa') ? 'Empresa: ' + v('empresa') : null,
+      'Correo: ' + v('email'),
+      v('telefono') ? 'Teléfono: ' + v('telefono') : null,
+      'Me interesa: ' + (etiquetas[v('interes')] || v('interes')),
+      '',
+      v('mensaje')
+    ].filter(Boolean);
+    var texto = encodeURIComponent(lineas.join('\n'));
+    window.open('https://wa.me/' + WA + '?text=' + texto, '_blank', 'noopener');
+    document.getElementById('form-nota').textContent =
+      'Listo, se abrió WhatsApp con tu mensaje. Si no se abrió, escribinos a info@knowhowhn.net';
+  });
+})();
+</script>
 </body>
 </html>
