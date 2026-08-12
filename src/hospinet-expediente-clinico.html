@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente clínico electrónico para hospitales | Know How S.A.</title>
+    <meta name="description" content="Expediente clínico electrónico con antecedentes, consulta, diagnóstico por afección, órdenes y notas. Cada registro con su usuario y su hora.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+        <meta property="og:title" content="Expediente clínico electrónico para hospitales | Know How S.A.">
+        <meta property="og:description" content="Expediente clínico electrónico con antecedentes, consulta, diagnóstico por afección, órdenes y notas. Cada registro con su usuario y su hora.">
+        <meta property="og:url" content="https://knowhowhn.net/hospinet-expediente-clinico">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="https://knowhowhn.net/hospinet-expediente-clinico">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Know How, S.A. de C.V.", "url": "https://knowhowhn.net/", "email": "info@knowhowhn.net", "telephone": "+504 9765-5779", "address": {"@type": "PostalAddress", "streetAddress": "Residencial Altos de Miraflores Sur, 2da Etapa", "addressLocality": "Tegucigalpa", "addressCountry": "HN", "postalCode": "10100"}}, {"@type": "SoftwareApplication", "name": "Hospinet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://knowhowhn.net/hospinet", "publisher": {"@type": "Organization", "name": "Know How, S.A. de C.V."}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se puede migrar el expediente que tenemos hoy?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de en qué esté. Lo que viene de una base de datos se evalúa durante la implementación y se cotiza como migración. Lo que está en papel normalmente se digitaliza y se adjunta al expediente del paciente conforme se va atendiendo, no de una sola vez."}}, {"@type": "Question", "name": "¿Hospinet funciona sin internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Es un sistema web al que se entra desde el navegador, con la información centralizada. El hospital debe considerar un enlace de respaldo, igual que lo hace para el punto de venta o para la banca en línea."}}, {"@type": "Question", "name": "¿El expediente sirve como respaldo ante un reclamo?", "acceptedAnswer": {"@type": "Answer", "text": "Cada registro queda con su autor, su fecha y su hora, los permisos se controlan por módulo y los cambios de clasificación del paciente quedan en bitácora. Es un expediente auditable. Lo que no incluye hoy es firma electrónica avanzada certificada."}}, {"@type": "Question", "name": "¿Se puede usar en una red de varias clínicas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, así opera. El expediente del paciente es uno solo para toda la red, mientras que cada sede mantiene su propia caja, su bodega y su punto de emisión con su CAI autorizado por la SAR."}}, {"@type": "Question", "name": "¿El expediente se conecta con la facturación?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los cargos de la consulta, la emergencia, el laboratorio y la farmacia se acumulan en la cuenta del paciente y se facturan desde el mismo sistema, con el correlativo autorizado que corresponde a esa sede."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">Inicio › Hospinet › Expediente Clínico</div>
+        <h1>Expediente clínico electrónico</h1>
+        <p class="lead">Un expediente que solo guarda la nota del médico es un procesador de texto caro. El de Hospinet guarda al paciente completo, y guarda quién escribió cada línea y a qué hora.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <h2>Qué guarda un expediente clínico electrónico de verdad</h2>
+        <p>El expediente clínico electrónico de Hospinet guarda al paciente completo: identidad, antecedentes, cada consulta, cada lectura de signos, cada diagnóstico, cada orden médica, cada resultado de laboratorio, cada incapacidad y cada remisión. En todos los casos, con el usuario que lo registró y la fecha y hora en que lo hizo.</p>
+        <p>El paciente se identifica con tarjeta de identidad, carnet de residencia, licencia o pasaporte, y el sistema valida el formato hondureño del número de identidad. Guarda además RTN, datos demográficos, fotografía, sede de origen y el medio por el que llegó a la institución.</p>
+        <p>Ese registro es único para toda la red: un paciente atendido en una sede aparece con su historia completa en cualquier otra.</p>
+        <h2>Antecedentes que se preguntan una vez</h2>
+        <p>El expediente incluye la historia física, el estilo de vida y los antecedentes personales, familiares, obstétricos y quirúrgicos como secciones propias, no como párrafos perdidos dentro de una nota de consulta.</p>
+        <p>Se llenan una vez y se actualizan cuando cambian. Se abren y se corrigen tanto desde la consulta como desde emergencias, así que el dato levantado en una urgencia de madrugada le queda servido al especialista la semana siguiente.</p>
+        <p>También hay historial dental por pieza, con el estado de cada diente y la solución aplicada, para las instituciones que tienen odontología dentro de la misma operación.</p>
+        <h2>La consulta, de la sala de espera al cierre</h2>
+        <p>El paciente entra a la sala de espera asignado a un consultorio. El sistema cronometra cada etapa por separado —admisión, toma de datos, enfermería y consultorio— y guarda la duración total. Ese dato es el que permite discutir tiempos de espera con números y no con anécdotas.</p>
+        <p>En la consulta se registran el motivo, la fecha de inicio del padecimiento y la historia de la enfermedad actual. Enfermería deja la lectura de signos y sus notas. El médico levanta la evaluación física, que en Hospinet es un formulario estructurado por aparatos —respiratorio, cardiovascular, abdomen, piel, neurológico, entre otros—, con escala de Glasgow y la posibilidad de adjuntar la imagen de un hallazgo.</p>
+        <p>La consulta queda ligada a la póliza o al contrato del paciente cuando llega por convenio. Eso evita la discusión mensual de a quién se le factura qué.</p>
+        <h2>Diagnóstico, protocolos y órdenes dentro del expediente clínico electrónico</h2>
+        <p>El diagnóstico se registra contra un catálogo de afecciones, no como texto libre. Eso es lo que después permite contar: cuántos hipertensos, cuántos diabéticos, cuántos casos de la misma afección esta semana. El sistema mantiene un tablero diario y un acumulado histórico por afección.</p>
+        <p>Cada afección puede tener su protocolo: qué laboratorios se piden, qué estudios de imagen, qué corresponde en hospitalización o cirugía, qué especialidad la atiende, qué tratamiento con principio activo, tipo de medicamento y vía de administración, y qué guías se le entregan al paciente. Cuando el médico diagnostica una afección protocolizada, el tratamiento y las guías se copian a la consulta y el médico los ajusta al caso.</p>
+        <p>De la consulta salen la orden médica con sus prescripciones, las órdenes de laboratorio, la incapacidad con su número de días y las remisiones, sea a otro médico de la casa o a otra clínica, con su motivo.</p>
+        <h2>Trazabilidad: quién escribió qué y cuándo</h2>
+        <p>Cada registro del expediente guarda el usuario que lo creó y el momento en que se creó. No hay nota anónima. Cuando llega un reclamo, la pregunta de quién escribió qué tiene respuesta.</p>
+        <p>Los permisos se asignan por módulo: gestionar pacientes, gestionar consultas, administrar laboratorios, gestionar caja, gestionar inventario, autorizar compras. Cada usuario ve y hace lo que le corresponde por su rol.</p>
+        <p>Cuando el mismo paciente aparece registrado dos veces —pasa en toda institución con años de operación— el sistema consolida los expedientes y arrastra al que queda las consultas, las emergencias y los resultados de laboratorio del duplicado. No se pierde historia al limpiar la base.</p>
+        <h2>El paciente ve su propio expediente clínico</h2>
+        <p>Hospinet expone un portal del paciente con el resumen de su expediente, el listado de sus consultas y el detalle de cada una, sus signos vitales, sus resultados de laboratorio y su clasificación de salud, además de notificaciones.</p>
+        <p>Para la institución eso significa menos llamadas al conmutador preguntando por resultados y menos fila en recepción. Para el paciente, tener su historia sin depender del horario de la clínica.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <h3>¿Se puede migrar el expediente que tenemos hoy?</h3>
+        <p>Depende de en qué esté. Lo que viene de una base de datos se evalúa durante la implementación y se cotiza como migración. Lo que está en papel normalmente se digitaliza y se adjunta al expediente del paciente conforme se va atendiendo, no de una sola vez.</p>
+        <h3>¿Hospinet funciona sin internet?</h3>
+        <p>No. Es un sistema web al que se entra desde el navegador, con la información centralizada. El hospital debe considerar un enlace de respaldo, igual que lo hace para el punto de venta o para la banca en línea.</p>
+        <h3>¿El expediente sirve como respaldo ante un reclamo?</h3>
+        <p>Cada registro queda con su autor, su fecha y su hora, los permisos se controlan por módulo y los cambios de clasificación del paciente quedan en bitácora. Es un expediente auditable. Lo que no incluye hoy es firma electrónica avanzada certificada.</p>
+        <h3>¿Se puede usar en una red de varias clínicas?</h3>
+        <p>Sí, así opera. El expediente del paciente es uno solo para toda la red, mientras que cada sede mantiene su propia caja, su bodega y su punto de emisión con su CAI autorizado por la SAR.</p>
+        <h3>¿El expediente se conecta con la facturación?</h3>
+        <p>Sí. Los cargos de la consulta, la emergencia, el laboratorio y la farmacia se acumulan en la cuenta del paciente y se facturan desde el mismo sistema, con el correlativo autorizado que corresponde a esa sede.</p>
+
+        <h2>Hablemos de su operación</h2>
+        <p>Le mostramos Hospinet funcionando y le armamos una propuesta a la medida de su
+        establecimiento. Escríbanos a <a href="mailto:info@knowhowhn.net">info@knowhowhn.net</a>,
+        al WhatsApp +504 9765-5779, o desde la <a href="contacto.html">página de contacto</a>.</p>
+        <p><a href="contacto.html" class="btn btn-primary">Solicitar demostración</a></p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<a href="contacto.html" class="wa-float" title="Contactanos">💬</a>
+
+</body>
+</html>
+
+</body>
+</html>

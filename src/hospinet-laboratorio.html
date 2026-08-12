@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software de laboratorio clínico LIS para hospitales | Know How S.A.</title>
+    <meta name="description" content="Software de laboratorio clínico LIS con 16 formatos de examen, estados de la orden, validación firmada del laboratorista y entrega digital al paciente.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+        <meta property="og:title" content="Software de laboratorio clínico LIS para hospitales | Know How S.A.">
+        <meta property="og:description" content="Software de laboratorio clínico LIS con 16 formatos de examen, estados de la orden, validación firmada del laboratorista y entrega digital al paciente.">
+        <meta property="og:url" content="https://knowhowhn.net/hospinet-laboratorio">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="https://knowhowhn.net/hospinet-laboratorio">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Know How, S.A. de C.V.", "url": "https://knowhowhn.net/", "email": "info@knowhowhn.net", "telephone": "+504 9765-5779", "address": {"@type": "PostalAddress", "streetAddress": "Residencial Altos de Miraflores Sur, 2da Etapa", "addressLocality": "Tegucigalpa", "addressCountry": "HN", "postalCode": "10100"}}, {"@type": "SoftwareApplication", "name": "Hospinet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://knowhowhn.net/hospinet", "publisher": {"@type": "Organization", "name": "Know How, S.A. de C.V."}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿El sistema se conecta con los analizadores del laboratorio?", "acceptedAnswer": {"@type": "Answer", "text": "Hoy no de forma automática. Los resultados se capturan en los formatos del sistema o se adjunta el archivo que genera el equipo. Si el laboratorio necesita interfaz con un analizador específico, es desarrollo a la medida y se cotiza aparte."}}, {"@type": "Question", "name": "¿Qué pasa con los exámenes que mandamos a un laboratorio externo?", "acceptedAnswer": {"@type": "Answer", "text": "Se registran en la misma orden y el resultado se sube como archivo adjunto, con su laboratorista responsable. Queda en el expediente del paciente junto con los exámenes procesados en casa."}}, {"@type": "Question", "name": "¿Se puede medir cuánto tarda el laboratorio?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La orden guarda la fecha de toma de muestra y la fecha de completado, y cada examen dentro de ella lleva su propio estado. Con eso se calcula el tiempo real por tipo de examen y por sede."}}, {"@type": "Question", "name": "¿El resultado lleva firma del profesional?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El laboratorista se registra con su firma cargada en el sistema y esa firma sale impresa en el reporte del resultado. El resultado siempre queda asociado a la persona que lo validó."}}, {"@type": "Question", "name": "¿Puedo vender el laboratorio sin usar el resto de Hospinet?", "acceptedAnswer": {"@type": "Answer", "text": "El módulo está diseñado como parte del sistema, y ahí está su valor: la orden viene de la consulta o de la emergencia y el cobro pasa por la misma caja. Se puede arrancar la implementación por laboratorio, pero no se vende como producto suelto."}}, {"@type": "Question", "name": "¿El paciente puede ver su resultado sin ir a la clínica?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El portal del paciente muestra el listado de sus resultados de laboratorio y el detalle de cada uno, junto con sus consultas y sus signos vitales."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">Inicio › Hospinet › Laboratorio</div>
+        <h1>Software de laboratorio clínico (LIS)</h1>
+        <p class="lead">Que la orden no se pierda, que nadie procese lo que no se cobró, que el resultado salga firmado por quien lo validó y que el médico lo vea sin llamar por teléfono al laboratorio.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <h2>Qué se le pide a un software de laboratorio clínico LIS</h2>
+        <p>Cuatro cosas, y todo lo demás es adorno: que la orden no se pierda entre la consulta y la mesa de trabajo, que no se procese una muestra que caja no cobró, que el resultado salga con el nombre y la firma del profesional que lo validó, y que el médico y el paciente lo vean sin llamar al laboratorio.</p>
+        <p>El módulo de laboratorio de Hospinet vive dentro del mismo sistema que la consulta, la emergencia y la caja. La orden nace del médico, pasa por caja y llega al laboratorio sin que nadie la vuelva a teclear en otro programa.</p>
+        <h2>Los estados por los que pasa la orden en el software de laboratorio clínico LIS</h2>
+        <p>Cada orden de laboratorio tiene un estado visible: solicitado, pendiente de cobro, pagado, toma de muestras, ingresar muestras y completado. El sistema guarda la fecha en que se tomó la muestra y la fecha en que la orden se completó.</p>
+        <p>Dentro de la orden, cada examen individual lleva su propio estado: solicitado, pendiente de resultados, en proceso y completado. Una orden de cinco exámenes puede tener tres listos y dos en proceso, y eso se ve sin preguntar.</p>
+        <p>La sala de espera del laboratorio muestra las órdenes vivas. Desde ahí se inicia la toma de muestras y se ingresan las muestras, cada acción explícita y con el usuario que la ejecutó. Con esas dos fechas se puede medir de verdad cuánto tarda el laboratorio, por tipo de examen y por sede.</p>
+        <h2>Formatos de examen con parámetros, unidades y valores de referencia</h2>
+        <p>Hospinet trae formatos de resultado ya armados para los exámenes que más se corren: uroanálisis, parasitología, química sanguínea, química especial, hematología, hematología de cinco partes, frotis de sangre periférica, serología, hemoglobina glicosilada, curva de tolerancia, urocultivo, hemostasia y coagulación, pruebas tiroideas y los formatos de COVID —antígeno, ELISA y formato general.</p>
+        <p>Cada formato es una tabla con parámetro, resultado, unidades y valor de referencia. El laboratorista llena los valores en pantalla y el resultado queda guardado como dato dentro del expediente, no como una hoja escaneada que después nadie puede buscar.</p>
+        <p>También se puede adjuntar el archivo del resultado cuando el examen se mandó a un laboratorio de referencia externo. El resultado externo queda en el mismo expediente que los internos, y el médico no tiene que abrir dos sistemas.</p>
+        <h2>Validación del laboratorista y clasificación del paciente</h2>
+        <p>Cada resultado se guarda con el laboratorista responsable. El profesional tiene su firma cargada en el sistema, y esa es la firma que sale en el reporte. No hay resultado sin dueño.</p>
+        <p>Al guardar un resultado, quien lo carga puede aplicar la clasificación de salud del paciente —el semáforo— y dejar la observación que la justifica. El cambio no sobrescribe el anterior en silencio: entra a una bitácora que conserva el historial de cómo fue cambiando la clasificación del paciente y qué laboratorio o qué consulta la provocó.</p>
+        <h2>Cobro, catálogo y entrega del resultado</h2>
+        <p>El catálogo de exámenes es el mismo catálogo de artículos del sistema: cada examen tiene su precio de venta, su impuesto y su tipo de laboratorio asociado. Se activa o desactiva y se puede limitar a las sedes donde realmente se ofrece.</p>
+        <p>La orden se liga al recibo. El estado pendiente de cobro existe precisamente para eso: para que el laboratorio no procese lo que caja no cobró, y para que caja no cobre dos veces lo mismo. La factura sale con el CAI y el correlativo autorizados por la SAR de esa sede.</p>
+        <p>El resultado terminado queda en el expediente y disponible en el portal del paciente, con su listado de resultados y el detalle de cada uno. Menos llamadas al conmutador preguntando si ya salió, y menos gente haciendo fila solo para recoger papeles.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <h3>¿El sistema se conecta con los analizadores del laboratorio?</h3>
+        <p>Hoy no de forma automática. Los resultados se capturan en los formatos del sistema o se adjunta el archivo que genera el equipo. Si el laboratorio necesita interfaz con un analizador específico, es desarrollo a la medida y se cotiza aparte.</p>
+        <h3>¿Qué pasa con los exámenes que mandamos a un laboratorio externo?</h3>
+        <p>Se registran en la misma orden y el resultado se sube como archivo adjunto, con su laboratorista responsable. Queda en el expediente del paciente junto con los exámenes procesados en casa.</p>
+        <h3>¿Se puede medir cuánto tarda el laboratorio?</h3>
+        <p>Sí. La orden guarda la fecha de toma de muestra y la fecha de completado, y cada examen dentro de ella lleva su propio estado. Con eso se calcula el tiempo real por tipo de examen y por sede.</p>
+        <h3>¿El resultado lleva firma del profesional?</h3>
+        <p>Sí. El laboratorista se registra con su firma cargada en el sistema y esa firma sale impresa en el reporte del resultado. El resultado siempre queda asociado a la persona que lo validó.</p>
+        <h3>¿Puedo vender el laboratorio sin usar el resto de Hospinet?</h3>
+        <p>El módulo está diseñado como parte del sistema, y ahí está su valor: la orden viene de la consulta o de la emergencia y el cobro pasa por la misma caja. Se puede arrancar la implementación por laboratorio, pero no se vende como producto suelto.</p>
+        <h3>¿El paciente puede ver su resultado sin ir a la clínica?</h3>
+        <p>Sí. El portal del paciente muestra el listado de sus resultados de laboratorio y el detalle de cada uno, junto con sus consultas y sus signos vitales.</p>
+
+        <h2>Hablemos de su operación</h2>
+        <p>Le mostramos Hospinet funcionando y le armamos una propuesta a la medida de su
+        establecimiento. Escríbanos a <a href="mailto:info@knowhowhn.net">info@knowhowhn.net</a>,
+        al WhatsApp +504 9765-5779, o desde la <a href="contacto.html">página de contacto</a>.</p>
+        <p><a href="contacto.html" class="btn btn-primary">Solicitar demostración</a></p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<a href="contacto.html" class="wa-float" title="Contactanos">💬</a>
+
+</body>
+</html>
+
+</body>
+</html>

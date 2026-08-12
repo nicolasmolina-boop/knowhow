@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software de farmacia hospitalaria e inventarios | Know How S.A.</title>
+    <meta name="description" content="Software de farmacia hospitalaria: catálogo con código de barras, existencias por bodega, receta a despacho, compras autorizadas, conteo y vencimientos.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+        <meta property="og:title" content="Software de farmacia hospitalaria e inventarios | Know How S.A.">
+        <meta property="og:description" content="Software de farmacia hospitalaria: catálogo con código de barras, existencias por bodega, receta a despacho, compras autorizadas, conteo y vencimientos.">
+        <meta property="og:url" content="https://knowhowhn.net/hospinet-farmacia">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="https://knowhowhn.net/hospinet-farmacia">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Know How, S.A. de C.V.", "url": "https://knowhowhn.net/", "email": "info@knowhowhn.net", "telephone": "+504 9765-5779", "address": {"@type": "PostalAddress", "streetAddress": "Residencial Altos de Miraflores Sur, 2da Etapa", "addressLocality": "Tegucigalpa", "addressCountry": "HN", "postalCode": "10100"}}, {"@type": "SoftwareApplication", "name": "Hospinet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://knowhowhn.net/hospinet", "publisher": {"@type": "Organization", "name": "Know How, S.A. de C.V."}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Maneja fechas de vencimiento?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Cada línea de existencia lleva su fecha de vencimiento, y el conteo físico se captura por producto y por vencimiento. El aviso automático por correo al responsable de la bodega se genera a partir del último conteo registrado."}}, {"@type": "Question", "name": "¿Puede una clínica tener varias bodegas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Las bodegas se crean por sede, se marca cuál es la central y cada una lleva sus propias existencias, sus mínimos y máximos y su responsable. Los traslados entre bodegas quedan registrados con origen, destino y anomalías."}}, {"@type": "Question", "name": "¿Quién puede autorizar una compra?", "acceptedAnswer": {"@type": "Answer", "text": "Quien tenga ese permiso. Hospinet separa los permisos de gestionar inventario, efectuar compras, autorizar compras y recibir compras. Se configuran por usuario, de modo que la persona que pide no sea la que aprueba."}}, {"@type": "Question", "name": "¿La existencia se descuenta al recetar o al facturar?", "acceptedAnswer": {"@type": "Answer", "text": "Al facturar. La receta genera la orden y el despacho la marca como entregada, pero la existencia se descarga de la bodega cuando la venta se registra. Así el inventario y la caja hablan del mismo movimiento."}}, {"@type": "Question", "name": "¿Puedo saber qué está recetando cada médico?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El listado de órdenes médicas por período se exporta a Excel con la fecha, el paciente, el médico y los medicamentos prescritos con su dosis. Es el reporte con el que se sostiene una conversación de comité."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">Inicio › Hospinet › Farmacia</div>
+        <h1>Software de farmacia hospitalaria</h1>
+        <p class="lead">Saber qué hay, saber a dónde se fue y que lo que sale por la ventanilla quede cobrado. La farmacia de un hospital privado se desangra por lo tercero más que por robo.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <h2>Qué necesita de verdad un software de farmacia hospitalaria</h2>
+        <p>Tres cosas: existencias confiables, trazabilidad de cada movimiento y que la salida por la ventanilla quede facturada. El resto son reportes bonitos sobre un dato que no cuadra.</p>
+        <p>En Hospinet la farmacia no es un sistema aparte que después hay que cuadrar contra la caja. El medicamento que el médico receta, el que la enfermera administra al paciente ingresado y el que el cajero factura son el mismo registro del mismo catálogo. No hay dos verdades.</p>
+        <h2>Catálogo, existencias y movimiento en la farmacia hospitalaria</h2>
+        <p>El catálogo guarda descripción, marca, presentación, unidad de medida, unidad de compra, costo, precio de venta e impuesto. El código de barras se genera automáticamente a partir del tipo de artículo cuando el producto no trae uno. Cada producto se activa o desactiva y se puede limitar a las sedes donde de verdad se vende.</p>
+        <p>Las existencias no son un número global: viven por bodega. Cada bodega pertenece a una sede y se marca cuál es la bodega central. Cada línea de existencia guarda cantidad, fecha de vencimiento y las cantidades mínima y máxima que esa bodega debe mantener.</p>
+        <p>Todo movimiento genera una transacción con la cantidad y el usuario que la provocó. No hay ajuste anónimo. Se puede consultar el movimiento del mes de un producto en una bodega concreta y ver de dónde salió cada unidad.</p>
+        <h2>De la receta al despacho</h2>
+        <p>El médico deja la orden médica dentro de la consulta y le agrega las prescripciones: el medicamento tomado del catálogo y la dosis. Farmacia trabaja sobre el listado de órdenes pendientes y marca la orden como despachada al entregarla.</p>
+        <p>El listado de órdenes por período se exporta a Excel con fecha, paciente, texto de la orden, médico y los medicamentos prescritos con su dosis. Sirve para auditar qué se está recetando y para negociar con el proveedor con datos en la mano en vez de con impresiones.</p>
+        <p>Cuando el despacho se factura, el sistema descarga la existencia de la bodega correspondiente. La salida de inventario y el ingreso de caja son el mismo acto, no dos procesos que se comparan a fin de mes y nunca cuadran.</p>
+        <h2>Medicación del paciente hospitalizado</h2>
+        <p>Para el paciente ingresado, el medicamento se programa contra la admisión: producto, unidades, intervalo de horas y número de repeticiones. El sistema calcula la próxima dosis, guarda la última aplicada y lleva la cuenta de cuántas se han suministrado.</p>
+        <p>Cada dosis administrada se registra por separado, con su hora y el usuario que la aplicó. El cargo del medicamento entra a la cuenta del paciente por esa misma vía, así que la hoja de medicación y la cuenta del ingreso salen del mismo dato.</p>
+        <p>Los protocolos por afección definen el tratamiento con principio activo, tipo de medicamento y vía de administración —oral, intramuscular, intravenosa, tópica y otras—, de modo que la prescripción parte de un estándar y no de la memoria de cada médico.</p>
+        <h2>Compras, requisiciones y traslados entre bodegas</h2>
+        <p>Una bodega que se queda corta levanta una requisición a la bodega central. La requisición pasa por estados: incompleta, solicitada, en cotización, aprobada o rechazada. Al aplicarse la transferencia, el sistema descarga en el origen y carga en el destino, y si llega menos de lo que salió se registra la anomalía con su responsable.</p>
+        <p>Cuando hay que comprar afuera, se piden cotizaciones a los proveedores registrados y se comparan lado a lado. La cotización se autoriza o se rechaza, y de la cotización autorizada nace la orden de compra. Al recibir se registra lo que llegó y lo que quedó pendiente, con anomalías si el proveedor mandó algo distinto. La factura del proveedor queda con su plazo de pago.</p>
+        <p>El permiso de comprar, el de autorizar la compra y el de recibirla son tres permisos distintos en el sistema. Quien pide no es quien autoriza ni quien recibe. Esa separación es lo que hace auditable la farmacia.</p>
+        <h2>Conteo físico y control de vencimientos</h2>
+        <p>El conteo se levanta como un historial de inventario: se captura lo que el sistema dice y lo que la persona encontró, y el sistema muestra la diferencia línea por línea. Mientras está en captura no ajusta nada; los ajustes se aplican en un paso aparte, explícito y registrado.</p>
+        <p>Cada bodega tiene un responsable asignado. El sistema le envía por correo el listado de productos cuyo vencimiento cae dentro de una ventana de un mes hacia atrás y un mes hacia adelante, tomados del último conteo. El producto por vencer se ve antes de vencerse, no cuando lo encuentra el auditor.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <h3>¿Maneja fechas de vencimiento?</h3>
+        <p>Sí. Cada línea de existencia lleva su fecha de vencimiento, y el conteo físico se captura por producto y por vencimiento. El aviso automático por correo al responsable de la bodega se genera a partir del último conteo registrado.</p>
+        <h3>¿Puede una clínica tener varias bodegas?</h3>
+        <p>Sí. Las bodegas se crean por sede, se marca cuál es la central y cada una lleva sus propias existencias, sus mínimos y máximos y su responsable. Los traslados entre bodegas quedan registrados con origen, destino y anomalías.</p>
+        <h3>¿Quién puede autorizar una compra?</h3>
+        <p>Quien tenga ese permiso. Hospinet separa los permisos de gestionar inventario, efectuar compras, autorizar compras y recibir compras. Se configuran por usuario, de modo que la persona que pide no sea la que aprueba.</p>
+        <h3>¿La existencia se descuenta al recetar o al facturar?</h3>
+        <p>Al facturar. La receta genera la orden y el despacho la marca como entregada, pero la existencia se descarga de la bodega cuando la venta se registra. Así el inventario y la caja hablan del mismo movimiento.</p>
+        <h3>¿Puedo saber qué está recetando cada médico?</h3>
+        <p>Sí. El listado de órdenes médicas por período se exporta a Excel con la fecha, el paciente, el médico y los medicamentos prescritos con su dosis. Es el reporte con el que se sostiene una conversación de comité.</p>
+
+        <h2>Hablemos de su operación</h2>
+        <p>Le mostramos Hospinet funcionando y le armamos una propuesta a la medida de su
+        establecimiento. Escríbanos a <a href="mailto:info@knowhowhn.net">info@knowhowhn.net</a>,
+        al WhatsApp +504 9765-5779, o desde la <a href="contacto.html">página de contacto</a>.</p>
+        <p><a href="contacto.html" class="btn btn-primary">Solicitar demostración</a></p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<a href="contacto.html" class="wa-float" title="Contactanos">💬</a>
+
+</body>
+</html>
+
+</body>
+</html>
