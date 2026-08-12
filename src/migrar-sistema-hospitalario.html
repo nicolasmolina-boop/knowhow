@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrar de sistema hospitalario sin parar la operación</title>
+    <meta name="description" content="Cómo migrar de sistema hospitalario por fases sin detener la atención: qué preguntar antes, qué pasa con el histórico de expedientes y qué sale mal en el camino.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+        <meta property="og:title" content="Migrar de sistema hospitalario sin parar la operación">
+        <meta property="og:description" content="Cómo migrar de sistema hospitalario por fases sin detener la atención: qué preguntar antes, qué pasa con el histórico de expedientes y qué sale mal en el camino.">
+        <meta property="og:url" content="https://knowhowhn.net/migrar-sistema-hospitalario">
+        <meta property="og:type" content="website">
+        <link rel="canonical" href="https://knowhowhn.net/migrar-sistema-hospitalario">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Know How, S.A. de C.V.", "url": "https://knowhowhn.net/", "email": "info@knowhowhn.net", "telephone": "+504 9765-5779", "address": {"@type": "PostalAddress", "streetAddress": "Residencial Altos de Miraflores Sur, 2da Etapa", "addressLocality": "Tegucigalpa", "addressCountry": "HN", "postalCode": "10100"}}, {"@type": "SoftwareApplication", "name": "Hospinet", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://knowhowhn.net/hospinet", "publisher": {"@type": "Organization", "name": "Know How, S.A. de C.V."}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se puede migrar sin cerrar el hospital ni un día?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, migrando por fases y haciendo el corte en la franja de menor carga. Lo que no se puede evitar es una ventana de pocas horas sin sistema, y unas semanas de operación más lenta mientras el personal se acostumbra. Planifique con eso adentro."}}, {"@type": "Question", "name": "¿Se pierden los expedientes viejos?", "acceptedAnswer": {"@type": "Answer", "text": "No tienen por qué perderse, pero tiene que decidirse qué se hace con ellos antes de empezar. Las tres opciones son migrarlos completos, migrar los recientes y dejar el resto en consulta de solo lectura, o dejar todo el histórico en el sistema viejo. La segunda es la que más veces funciona. En los tres casos, exija que el respaldo completo de la base vieja quede en poder del hospital."}}, {"@type": "Question", "name": "¿Qué pasa si el proveedor anterior no quiere entregar los datos?", "acceptedAnswer": {"@type": "Answer", "text": "Pasa, y por eso conviene revisar hoy qué dice su contrato actual sobre entrega de datos al terminar. Si no dice nada, pídalo por escrito antes de anunciar que se va. Un proveedor nuevo con experiencia puede extraer datos de una base a la que usted tenga acceso, pero eso encarece y alarga el proyecto."}}, {"@type": "Question", "name": "¿Cuánto cuesta una migración?", "acceptedAnswer": {"@type": "Answer", "text": "El costo se compone de tres partes y solo una se cotiza normalmente: el trabajo técnico de migración, la capacitación, y el mes de operación a media velocidad. Esta última es la mayor de las tres en casi todos los casos, y es interna, así que no aparece en ninguna cotización. Estímela usted con sus propios números de atención diaria."}}, {"@type": "Question", "name": "¿Conviene cambiar todo de una vez o por partes?", "acceptedAnswer": {"@type": "Answer", "text": "Por partes, salvo en instituciones muy pequeñas. El orden que funciona es catálogos y maestros, luego un área de apoyo como laboratorio o farmacia, luego consulta externa, y de último emergencias y hospitalización. Facturación se corta en una sola fecha y no se parte."}}, {"@type": "Question", "name": "¿Cuándo se apaga el sistema viejo?", "acceptedAnswer": {"@type": "Answer", "text": "No el día del corte. Déjelo en solo lectura al menos tres meses, y más si el histórico se quedó ahí. Antes de apagarlo definitivamente, verifique que existe un respaldo restaurable y documentado, y defina por escrito quién lo custodia."}}]}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Know <span>How</span></a>
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="hospinet.html">Hospinet</a></li>
+                <li><a href="agentes-ia.html">Agentes IA</a></li>
+                <li><a href="empresas.html">Empresas</a></li>
+                <li><a href="iglesias.html">Iglesias</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="cta">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+</header>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">Inicio › Recursos › Migrar de sistema hospitalario</div>
+        <h1>Cómo migrar de sistema hospitalario sin parar la operación</h1>
+        <p class="lead">El hospital no puede cerrar un mes para cambiar de sistema. Así se planifica una migración por fases, qué se hace con el histórico y dónde está el costo que nadie presupuesta.</p>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <h2>Lo caro no es la licencia</h2>
+        <p>Cuando un hospital presupuesta un cambio de sistema, presupuesta la licencia, la implementación y a veces la capacitación. Casi nunca presupuesta lo que de verdad cuesta: el mes en que el hospital opera a media velocidad.</p>
+        <p>Ese mes existe siempre. El personal está aprendiendo, se cometen errores de captura, hay que corregir, alguien tiene que revisar lo que salió mal el día anterior, y mientras tanto los pacientes siguen llegando. Si su hospital atiende cien pacientes al día y durante cuatro semanas atiende ochenta, esa diferencia es el verdadero costo de la migración, y suele superar la licencia del primer año.</p>
+        <p>La buena noticia es que ese costo se puede reducir mucho con el diseño correcto del proyecto. La mala es que no se puede eliminar, y cualquiera que le diga lo contrario le está vendiendo algo. Planifique con ese mes adentro del presupuesto en vez de fingir que no va a pasar.</p>
+        <h2>Qué preguntar antes de firmar la migración</h2>
+        <p>Estas preguntas van al proveedor nuevo, por escrito, antes de la firma. No después.</p>
+        <p>¿Qué exactamente se migra y qué no? Pida una lista por tabla o por área: pacientes, expedientes, resultados de laboratorio, inventario, cuentas por cobrar, catálogos de servicios y precios, convenios, usuarios. Todo lo que no esté en esa lista, asuma que no se migra.</p>
+        <p>¿Quién extrae los datos del sistema viejo, y qué pasa si el proveedor anterior no coopera? Esto es más común de lo que parece, sobre todo cuando la salida no fue amistosa. Pregunte si tienen experiencia extrayendo datos sin colaboración del proveedor saliente y cómo lo resolvieron.</p>
+        <p>¿Habrá una migración de prueba antes de la definitiva? Debe haberla, y usted debe poder cuadrar conteos: cuántos pacientes había allá y cuántos hay acá, cuántos resultados, cuánto suma la cartera. Si los números no cuadran en la prueba, no se pasa a la definitiva.</p>
+        <p>¿Cómo se manejan los duplicados? Su base actual los tiene, todas las tienen. Pregunte qué criterio se usa para unificar y quién autoriza cada unificación, porque unir por error dos expedientes de personas distintas es un problema clínico, no administrativo.</p>
+        <p>¿Cuánto tiempo de sistema no disponible habrá el día del corte, y en qué franja horaria? Debe quedar por escrito, con un plan de contingencia en papel para esa ventana.</p>
+        <h2>Qué pasa con el histórico de expedientes</h2>
+        <p>Esta es la decisión que más se posterga y la que más duele el día del arranque. Hay tres caminos y cada uno tiene su precio.</p>
+        <p>Migrar todo el histórico al sistema nuevo es lo más cómodo para el usuario y lo más caro y lento de ejecutar, porque hay que mapear estructuras que muchas veces no coinciden y limpiar datos de años. Es también donde más se cuelan errores silenciosos.</p>
+        <p>Migrar solo los datos vivos y dejar el histórico en consulta de solo lectura es el camino que más veces funciona. Se migran pacientes, catálogos, saldos abiertos y los expedientes de los últimos años, y el resto queda accesible en una pantalla de consulta contra la base vieja. El médico ve todo, aunque una parte la vea en un módulo aparte.</p>
+        <p>No migrar nada y arrancar limpio solo sirve si el sistema viejo va a seguir disponible para consulta durante años, con alguien responsable de mantenerlo prendido. En la práctica, ese servidor termina apagado tres años después y el histórico se pierde.</p>
+        <p>Sea cual sea el camino, exija dos cosas: que el respaldo completo de la base vieja quede en poder del hospital, en un formato legible y documentado, y que quede escrito quién es el responsable de custodiarlo. Ese respaldo es suyo, no del proveedor.</p>
+        <h2>La migración por fases: el orden que funciona</h2>
+        <p>Cambiar todo el hospital en un fin de semana es posible y es una mala idea. La alternativa es por fases, y el orden importa.</p>
+        <p>Fase uno, los catálogos y los maestros: pacientes, servicios, precios, convenios, usuarios y permisos. Nadie atiende todavía. Acá se cuadran conteos y se limpian duplicados. Si esta fase sale mal, todo lo demás sale mal.</p>
+        <p>Fase dos, un área de apoyo con volumen alto y riesgo clínico bajo. Laboratorio o farmacia suelen ser el mejor primer candidato: el proceso es repetitivo, el personal es pequeño, y si algo falla nadie deja de recibir atención. Acá se aprende cómo se comporta el sistema con volumen real y se ajusta antes de tocar el área clínica.</p>
+        <p>Fase tres, consulta externa. Más usuarios, más resistencia, pero cada atención empieza y termina el mismo día, así que un error no se arrastra.</p>
+        <p>Fase cuatro, la última y la más delicada: emergencias y hospitalización. Acá el paciente permanece abierto varios días y no se puede tener a la mitad de los internados en un sistema y la otra mitad en otro. Se acuerda una fecha de corte y los pacientes ya internados se terminan en el sistema viejo, mientras los ingresos nuevos entran al nuevo. Esa convivencia dura lo que dura la estancia más larga.</p>
+        <p>En paralelo a todas las fases va facturación, y esa nunca se parte: se corta en una fecha y a partir de ahí todo se factura en el sistema nuevo, con el CAI y el rango correspondientes ya configurados y probados.</p>
+        <h2>El día del corte</h2>
+        <p>El corte se hace cuando el hospital tiene menos carga. En la mayoría de las instituciones eso es de sábado en la noche a domingo en la mañana. Antes del corte, tres cosas tienen que existir: el respaldo completo del sistema viejo verificado, el plan en papel para operar sin sistema durante la ventana, y una lista de a quién se llama si algo falla, con teléfonos que alguien contesta a esa hora.</p>
+        <p>Durante la primera semana ponga gente de apoyo en piso, no en una oficina. Alguien que conozca el sistema parado junto a la enfermera y junto al cajero, resolviendo dudas en el momento. Es caro por una semana y es lo que evita que el personal invente atajos que después son imposibles de deshacer.</p>
+        <p>No apague el sistema viejo el día del corte. Déjelo en solo lectura por lo menos tres meses. Va a necesitarlo más veces de las que imagina, y no cuesta casi nada tenerlo prendido.</p>
+        <h2>Qué sale mal</h2>
+        <p>Los catálogos, siempre. Precios que no coinciden con los del sistema viejo, servicios duplicados con nombres parecidos, convenios cuyo descuento se aplicó al revés. Se detecta en la primera semana de facturación y se detecta por reclamo del paciente. Se previene cuadrando el catálogo contra el sistema viejo antes del corte, servicio por servicio, no por muestra.</p>
+        <p>El inventario. El conteo físico del día del corte casi nunca coincide con el saldo del sistema viejo, y si usted carga el saldo del sistema viejo arranca con existencias falsas. Haga conteo físico y cargue el conteo, no el saldo.</p>
+        <p>Las cuentas por cobrar abiertas. Si se migran mal, el hospital cobra dos veces o no cobra. Defina antes si la cartera vieja se sigue gestionando en el sistema viejo hasta agotarla, o si se migra con saldos y se congela el sistema viejo. Las dos funcionan; mezclarlas no.</p>
+        <p>El personal que no se capacitó. Siempre hay un turno, casi siempre el de la noche o el de fin de semana, al que la capacitación no llegó. Revise la lista de asistencia contra la planilla completa, turno por turno, antes del corte.</p>
+        <p>Y el pico de reclamos en la semana dos. La semana uno el personal aguanta por novedad. En la semana dos aparece el cansancio y con él las quejas. Téngalo previsto: es la fase normal del proyecto, no la señal de que fracasó.</p>
+        <h2>Cuánto tarda de verdad</h2>
+        <p>Los tiempos publicados por los proveedores dan una referencia útil del rango. HarmoniMD declara menos de 3 semanas para su edición ágil de 0 a 50 camas y entre 8 y 12 meses para su HIS completo de más de 50 camas. Esos son tiempos de implementación del proveedor, no de estabilización del hospital.</p>
+        <p>Sume a eso el tiempo suyo: el que tarda el personal en dejar de necesitar apoyo en piso, el que tarda facturación en dejar de encontrar diferencias, el que tarda gerencia en volver a confiar en los reportes. En nuestra experiencia esa cola dura entre uno y tres meses más allá de la fecha de arranque, según cuántas áreas se cambiaron a la vez.</p>
+        <p>Pida un cronograma con fechas por fase y con criterios de aceptación escritos por fase. Un cronograma que solo dice fecha de arranque es un deseo, no un plan.</p>
+        <h2>Señales de que todavía no está listo para migrar</h2>
+        <p>No migre si no tiene un respaldo verificado del sistema actual y alguien que sepa restaurarlo. No migre si su catálogo de servicios y precios está desordenado: va a mudar el desorden y a duplicarlo. No migre en el mes de mayor demanda del año, ni en cierre fiscal, ni cuando le falta personal clave.</p>
+        <p>Y no migre si la decisión no la respalda el cuerpo médico. Un sistema nuevo con los médicos en contra tiene un solo final, y no es el sistema el que pierde: es el hospital, que termina pagando dos licencias.</p>
+        <p>Si quiere, le hacemos una revisión previa de estos puntos sobre su operación actual, aunque al final decida quedarse donde está o irse con otro proveedor. Es más barato para todos descubrir hoy que no era el momento, que descubrirlo el segundo domingo de la implementación.</p>
+
+        <h2>Preguntas frecuentes</h2>
+        <h3>¿Se puede migrar sin cerrar el hospital ni un día?</h3>
+        <p>Sí, migrando por fases y haciendo el corte en la franja de menor carga. Lo que no se puede evitar es una ventana de pocas horas sin sistema, y unas semanas de operación más lenta mientras el personal se acostumbra. Planifique con eso adentro.</p>
+        <h3>¿Se pierden los expedientes viejos?</h3>
+        <p>No tienen por qué perderse, pero tiene que decidirse qué se hace con ellos antes de empezar. Las tres opciones son migrarlos completos, migrar los recientes y dejar el resto en consulta de solo lectura, o dejar todo el histórico en el sistema viejo. La segunda es la que más veces funciona. En los tres casos, exija que el respaldo completo de la base vieja quede en poder del hospital.</p>
+        <h3>¿Qué pasa si el proveedor anterior no quiere entregar los datos?</h3>
+        <p>Pasa, y por eso conviene revisar hoy qué dice su contrato actual sobre entrega de datos al terminar. Si no dice nada, pídalo por escrito antes de anunciar que se va. Un proveedor nuevo con experiencia puede extraer datos de una base a la que usted tenga acceso, pero eso encarece y alarga el proyecto.</p>
+        <h3>¿Cuánto cuesta una migración?</h3>
+        <p>El costo se compone de tres partes y solo una se cotiza normalmente: el trabajo técnico de migración, la capacitación, y el mes de operación a media velocidad. Esta última es la mayor de las tres en casi todos los casos, y es interna, así que no aparece en ninguna cotización. Estímela usted con sus propios números de atención diaria.</p>
+        <h3>¿Conviene cambiar todo de una vez o por partes?</h3>
+        <p>Por partes, salvo en instituciones muy pequeñas. El orden que funciona es catálogos y maestros, luego un área de apoyo como laboratorio o farmacia, luego consulta externa, y de último emergencias y hospitalización. Facturación se corta en una sola fecha y no se parte.</p>
+        <h3>¿Cuándo se apaga el sistema viejo?</h3>
+        <p>No el día del corte. Déjelo en solo lectura al menos tres meses, y más si el histórico se quedó ahí. Antes de apagarlo definitivamente, verifique que existe un respaldo restaurable y documentado, y defina por escrito quién lo custodia.</p>
+        <h2>Fuentes</h2>
+        <p>Esta página cita normativa hondureña. Verifique siempre contra la fuente oficial vigente.</p>
+        <ul>
+            <li><a href="https://www.harmonimd.com/precios" rel="nofollow noopener" target="_blank">https://www.harmonimd.com/precios</a></li>
+            <li><a href="https://harmonimd.com/en/" rel="nofollow noopener" target="_blank">https://harmonimd.com/en/</a></li>
+            <li><a href="https://www.sar.gob.hn/download/acuerdo-no-189-2014-no-33407-del-21-de-abril-de-2014-reglamento-del-regimen-de-facturacion-otros-documentos-fiscales-y-registro-fiscal-de-imprentas/" rel="nofollow noopener" target="_blank">https://www.sar.gob.hn/download/acuerdo-no-189-2014-no-33407-del-21-de-abril-de-2014-reglamento-del-regimen-de-facturacion-otros-documentos-fiscales-y-registro-fiscal-de-imprentas/</a></li>
+            <li><a href="https://consortiumlegal.com/2022/09/06/proteccion-de-datos-y-privacidad-de-la-informacion-en-honduras/" rel="nofollow noopener" target="_blank">https://consortiumlegal.com/2022/09/06/proteccion-de-datos-y-privacidad-de-la-informacion-en-honduras/</a></li>
+        </ul>
+
+        <h2>Hablemos de su operación</h2>
+        <p>Le mostramos Hospinet funcionando y le armamos una propuesta a la medida de su
+        establecimiento. Escríbanos a <a href="mailto:info@knowhowhn.net">info@knowhowhn.net</a>,
+        al WhatsApp +504 9765-5779, o desde la <a href="contacto.html">página de contacto</a>.</p>
+        <p><a href="contacto.html" class="btn btn-primary">Solicitar demostración</a></p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Know How, S.A. de C.V.</h3>
+                <p>Software hospitalario, agentes IA de ventas y consultoría organizacional. Tegucigalpa, Honduras. Constituida en 2016.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="hospinet.html">Hospinet</a></li>
+                    <li><a href="agentes-ia.html">Agentes IA</a></li>
+                    <li><a href="empresas.html">Empresas</a></li>
+                    <li><a href="iglesias.html">Iglesias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacidad.html">Privacidad</a></li>
+                    <li><a href="terminos.html">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Know How, S.A. de C.V. — Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<a href="contacto.html" class="wa-float" title="Contactanos">💬</a>
+
+</body>
+</html>
+
+</body>
+</html>
